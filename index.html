@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>อภิญญาคาเฟ่ | Apinya Café - Specialty Coffee & Artisan Bakery</title>
+    <meta name="description" content="อภิญญาคาเฟ่ (Apinya Café) คาเฟ่สไตล์โมเดิร์นลอฟท์ เสิร์ฟกาแฟ Specialty คัดสรรพิเศษ ครัวซองต์เนยฝรั่งเศสแท้ และเบเกอรี่โฮมเมดอบสดใหม่ทุกวัน">
+    
+    <!-- Google Fonts: Prompt & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Prompt:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#d4a373',
+                            amber: '#c59b27',
+                            amberLight: '#fae29c',
+                            dark: '#0c0d10',
+                            card: '#15171c',
+                            cardHover: '#1c1f26',
+                            concrete: '#222630',
+                            border: '#2e3340',
+                            muted: '#9ca3af'
+                        }
+                    },
+                    fontFamily: {
+                        prompt: ['Prompt', 'sans-serif'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: #0c0d10;
+            color: #e5e7eb;
+            overflow-x: hidden;
+        }
+        
+        .font-eng {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0c0d10;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2e3340;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c59b27;
+        }
+
+        /* Glassmorphism Effect */
+        .glass-dark {
+            background: rgba(18, 20, 26, 0.85);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        /* Concrete texture subtle pattern */
+        .bg-concrete-pattern {
+            background-color: #0c0d10;
+            background-image: radial-gradient(rgba(212, 163, 115, 0.04) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+
+        /* Text glow */
+        .text-glow {
+            text-shadow: 0 0 25px rgba(212, 163, 115, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-concrete-pattern antialiased selection:bg-brand-amber selection:text-black">
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 border-b border-brand-border/40">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-lg bg-gradient-to-br from-brand-amber to-brand-gold flex items-center justify-center text-black shadow-lg shadow-brand-amber/20 group-hover:scale-105 transition-transform duration-300">
+                        <i class="fa-solid fa-mug-hot text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="block text-xl font-bold font-eng tracking-wider text-white group-hover:text-brand-gold transition-colors">
+                            APINYA <span class="text-brand-amber font-light">CAFÉ</span>
+                        </span>
+                        <span class="block text-xs text-brand-muted tracking-widest font-light">อภิญญาคาเฟ่ • MODERN LOFT</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#home" class="text-white hover:text-brand-gold transition-colors">หน้าแรก</a>
+                    <a href="#about" class="text-gray-300 hover:text-brand-gold transition-colors">เกี่ยวกับเรา</a>
+                    <a href="#menu" class="text-gray-300 hover:text-brand-gold transition-colors">เมนูแนะนำ</a>
+                    <a href="#vibes" class="text-gray-300 hover:text-brand-gold transition-colors">บรรยากาศร้าน</a>
+                    <a href="#reservation" class="text-gray-300 hover:text-brand-gold transition-colors">จองโต๊ะ</a>
+                    <a href="#location" class="text-gray-300 hover:text-brand-gold transition-colors">พิกัด & เวลาเปิด</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="#reservation" class="px-5 py-2.5 rounded-full text-sm font-semibold bg-gradient-to-r from-brand-amber to-brand-gold text-black hover:opacity-90 shadow-md shadow-brand-amber/20 transition-all duration-300 transform hover:-translate-y-0.5">
+                        <i class="fa-regular fa-calendar-check mr-2"></i> จองโต๊ะล่วงหน้า
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden text-gray-300 hover:text-white p-2 rounded-lg border border-brand-border" aria-label="Open Menu">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden glass-dark border-b border-brand-border px-6 py-6 transition-all duration-300">
+            <div class="flex flex-col space-y-4 text-base font-medium">
+                <a href="#home" class="mobile-link text-white hover:text-brand-gold transition-colors"><i class="fa-solid fa-house w-6 text-brand-amber"></i> หน้าแรก</a>
+                <a href="#about" class="mobile-link text-gray-300 hover:text-brand-gold transition-colors"><i class="fa-solid fa-circle-info w-6 text-brand-amber"></i> เกี่ยวกับเรา</a>
+                <a href="#menu" class="mobile-link text-gray-300 hover:text-brand-gold transition-colors"><i class="fa-solid fa-utensils w-6 text-brand-amber"></i> เมนูแนะนำ</a>
+                <a href="#vibes" class="mobile-link text-gray-300 hover:text-brand-gold transition-colors"><i class="fa-solid fa-camera-retro w-6 text-brand-amber"></i> บรรยากาศร้าน</a>
+                <a href="#reservation" class="mobile-link text-gray-300 hover:text-brand-gold transition-colors"><i class="fa-regular fa-calendar-check w-6 text-brand-amber"></i> จองโต๊ะล่วงหน้า</a>
+                <a href="#location" class="mobile-link text-gray-300 hover:text-brand-gold transition-colors"><i class="fa-solid fa-location-dot w-6 text-brand-amber"></i> พิกัด & แผนที่</a>
+                <div class="pt-2">
+                    <a href="#reservation" class="mobile-link block text-center py-3 rounded-xl font-semibold bg-gradient-to-r from-brand-amber to-brand-gold text-black">
+                        จองโต๊ะล่วงหน้า
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
+        <!-- Hero Background with Loft Aesthetics & Dark Gradients -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=2000&q=80" 
+                 alt="Apinya Cafe Atmosphere" 
+                 class="w-full h-full object-cover object-center scale-105 animate-pulse" 
+                 style="animation-duration: 10s;">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/85 to-brand-dark/70"></div>
+            <div class="absolute inset-0 bg-radial-gradient from-transparent via-brand-dark/50 to-brand-dark"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-8">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-amber/40 bg-brand-dark/80 backdrop-blur-md mb-6 shadow-lg shadow-brand-amber/10">
+                <span class="w-2 h-2 rounded-full bg-brand-amber animate-ping"></span>
+                <span class="text-xs sm:text-sm font-eng tracking-widest text-brand-gold font-semibold uppercase">Specialty Coffee & Artisan Bakery</span>
+            </div>
+
+            <!-- Main Title -->
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold text-white tracking-tight leading-tight mb-6">
+                อภิญญาคาเฟ่
+                <span class="block text-2xl sm:text-4xl md:text-5xl font-eng font-light text-brand-gold mt-2 text-glow">
+                    APINYA CAFÉ & ROASTERY
+                </span>
+            </h1>
+
+            <!-- Slogan -->
+            <p class="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-gray-300 font-light leading-relaxed mb-10">
+                สัมผัสสุนทรียภาพแห่งรสชาติกาแฟ <span class="text-white font-medium">Specialty คัดสรรพิเศษ</span> และครัวซองต์เนยฝรั่งเศสอบสดใหม่ทุกเช้า ในสเปซดีไซน์ <span class="text-brand-gold font-medium">โมเดิร์น ลอฟท์</span> สุดเท่ เรียบหรู และมีเอกลักษณ์
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+                <a href="#menu" class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-medium bg-gradient-to-r from-brand-amber to-brand-gold text-black shadow-lg shadow-brand-amber/25 hover:shadow-brand-amber/40 hover:scale-105 transition-all duration-300">
+                    <i class="fa-solid fa-mug-saucer mr-2"></i> ดูเมนูแนะนำ
+                </a>
+                <a href="#reservation" class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-medium bg-brand-card/90 text-white border border-brand-border hover:border-brand-gold hover:text-brand-gold transition-all duration-300">
+                    <i class="fa-regular fa-calendar-check mr-2"></i> จองโต๊ะล่วงหน้า
+                </a>
+            </div>
+
+            <!-- Highlights Bar -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 max-w-4xl mx-auto pt-8 border-t border-brand-border/50">
+                <div class="p-3 bg-brand-card/60 backdrop-blur-sm rounded-xl border border-brand-border/50">
+                    <div class="text-brand-amber text-xl mb-1"><i class="fa-solid fa-seedling"></i></div>
+                    <div class="text-sm font-semibold text-white">Specialty Beans</div>
+                    <div class="text-xs text-gray-400 font-light">เมล็ดคัดเกรดพิเศษ</div>
+                </div>
+                <div class="p-3 bg-brand-card/60 backdrop-blur-sm rounded-xl border border-brand-border/50">
+                    <div class="text-brand-amber text-xl mb-1"><i class="fa-solid fa-bread-slice"></i></div>
+                    <div class="text-sm font-semibold text-white">French Butter</div>
+                    <div class="text-xs text-gray-400 font-light">ครัวซองต์เนยแท้ฝรั่งเศส</div>
+                </div>
+                <div class="p-3 bg-brand-card/60 backdrop-blur-sm rounded-xl border border-brand-border/50">
+                    <div class="text-brand-amber text-xl mb-1"><i class="fa-solid fa-cube"></i></div>
+                    <div class="text-sm font-semibold text-white">Loft Ambiance</div>
+                    <div class="text-xs text-gray-400 font-light">ปูนเปลือย & แสงธรรมชาติ</div>
+                </div>
+                <div class="p-3 bg-brand-card/60 backdrop-blur-sm rounded-xl border border-brand-border/50">
+                    <div class="text-brand-amber text-xl mb-1"><i class="fa-solid fa-wifi"></i></div>
+                    <div class="text-sm font-semibold text-white">Work Friendly</div>
+                    <div class="text-xs text-gray-400 font-light">ปลั๊กไฟ & Wi-Fi ครบครัน</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ABOUT US SECTION ================= -->
+    <section id="about" class="py-24 relative z-10 border-t border-brand-border/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left: Imagery Showcase -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative rounded-2xl overflow-hidden border border-brand-border shadow-2xl group">
+                        <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Barista at Apinya Cafe" 
+                             class="w-full h-[480px] object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent"></div>
+                        
+                        <!-- Floating Highlight Card -->
+                        <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl glass-dark border border-brand-border/80">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-lg bg-brand-amber/20 border border-brand-amber/30 flex items-center justify-center text-brand-amber text-2xl">
+                                    <i class="fa-solid fa-award"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-semibold text-sm">Artisan Passion</h4>
+                                    <p class="text-xs text-gray-400">ใส่ใจทุกอุณหภูมิ สัดส่วน และเวลาในการสกัด</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Decorative Element -->
+                    <div class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-brand-amber/40 rounded-tl-2xl pointer-events-none"></div>
+                    <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-brand-amber/40 rounded-br-2xl pointer-events-none"></div>
+                </div>
+
+                <!-- Right: Content Narrative -->
+                <div class="lg:col-span-7">
+                    <div class="inline-flex items-center gap-2 text-brand-amber text-sm font-semibold tracking-wider font-eng uppercase mb-3">
+                        <i class="fa-solid fa-circle-notch text-xs"></i> ABOUT APINYA CAFÉ
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6 leading-snug">
+                        จุดเริ่มต้นของความหลงใหล <br>
+                        <span class="text-brand-gold font-light">ผสานความดิบเท่ของ Loft เข้ากับรสชาติกาแฟระดับ Specialty</span>
+                    </h2>
+
+                    <div class="space-y-4 text-gray-300 text-base leading-relaxed font-light mb-8">
+                        <p>
+                            <strong class="text-white font-medium">"อภิญญาคาเฟ่"</strong> ถือกำเนิดขึ้นจากความตั้งใจที่จะสร้างสเปซพักผ่อนที่มากกว่าแค่ร้านกาแฟ เราออกแบบร้านด้วยสถาปัตยกรรม <span class="text-white font-medium">โมเดิร์น ลอฟท์ (Modern Loft)</span> ที่เน้นความโปร่ง โล่ง ผนังปูนเปลือย โครงสร้างเหล็กสีดำ และการจัดแสงธรรมชาติที่อบอุ่น
+                        </p>
+                        <p>
+                            หัวใจของเราคือ <span class="text-brand-gold font-medium">กาแฟ Specialty</span> เราคัดเลือกเมล็ดกาแฟสายพันธุ์ดีจากทั้งแหล่งปลูกชั้นนำในประเทศไทยและระดับโลก นำมาผ่านการคั่วอย่างพิถีพิถันเพื่อดึงกลิ่นและรสชาติที่เป็นเอกลักษณ์เฉพาะตัว
+                        </p>
+                        <p>
+                            พร้อมเสิร์ฟคู่กับ <span class="text-white font-medium">ครัวซองต์เนยสดฝรั่งเศส (AOP Butter)</span> และเบเกอรี่โฮมเมดสูตรเฉพาะของทางร้าน ที่ผ่านการรีดแป้งและอบสดใหม่ทุกเช้า ให้เนื้อสัมผัสกรอบนอกนุ่มฉ่ำเนย หอมฟุ้งทั่วทั้งร้าน
+                        </p>
+                    </div>
+
+                    <!-- Core Values Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="p-4 rounded-xl bg-brand-card border border-brand-border">
+                            <span class="text-2xl font-bold font-eng text-brand-amber">01</span>
+                            <h4 class="text-white font-medium mt-1 mb-1">เมล็ดคัดพิเศษ</h4>
+                            <p class="text-xs text-gray-400">Single Origin & Signature House Blend สำหรับทุกรสนิยม</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-brand-card border border-brand-border">
+                            <span class="text-2xl font-bold font-eng text-brand-amber">02</span>
+                            <h4 class="text-white font-medium mt-1 mb-1">อบสดใหม่ทุกวัน</h4>
+                            <p class="text-xs text-gray-400">ครัวซองต์และขนมอบปราศจากสารกันเสีย เนยแท้ 100%</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-brand-card border border-brand-border">
+                            <span class="text-2xl font-bold font-eng text-brand-amber">03</span>
+                            <h4 class="text-white font-medium mt-1 mb-1">บรรยากาศเงียบสงบ</h4>
+                            <p class="text-xs text-gray-400">เหมาะสำหรับการนั่งทำงาน พูดคุย และถ่ายรูปเช็กอิน</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SIGNATURE MENU SECTION ================= -->
+    <section id="menu" class="py-24 bg-brand-card/30 relative z-10 border-t border-brand-border/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-brand-amber text-sm font-semibold tracking-wider font-eng uppercase mb-2 inline-block">
+                    HANDCRAFTED DELIGHTS
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+                    เมนูไฮไลต์ประจำร้าน
+                </h2>
+                <p class="text-gray-400 text-base font-light">
+                    ทุกแก้วและทุกชิ้นผ่านการคัดสรรวัตถุดิบคุณภาพสูง เพื่อรสชาติที่สมบูรณ์แบบที่สุด
+                </p>
+
+                <!-- Filter Tabs -->
+                <div class="flex flex-wrap items-center justify-center gap-2 mt-8" id="menuTabs">
+                    <button class="menu-tab-btn active px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-brand-amber text-black" data-category="all">
+                        ทั้งหมด
+                    </button>
+                    <button class="menu-tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-brand-card text-gray-300 hover:text-white border border-brand-border" data-category="coffee">
+                        ☕ Specialty Coffee
+                    </button>
+                    <button class="menu-tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-brand-card text-gray-300 hover:text-white border border-brand-border" data-category="croissant">
+                        🥐 ครัวซองต์ & เบเกอรี่
+                    </button>
+                    <button class="menu-tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-brand-card text-gray-300 hover:text-white border border-brand-border" data-category="non-coffee">
+                        🍵 Non-Coffee & Refresher
+                    </button>
+                </div>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="menuGrid">
+                
+                <!-- Item 1: Dirty Loft -->
+                <div class="menu-card rounded-2xl bg-brand-card border border-brand-border overflow-hidden group hover:border-brand-amber/60 transition-all duration-300 flex flex-col" data-category="coffee">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80" 
+                             alt="Dirty Loft" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-brand-amber text-black">
+                            Signature
+                        </span>
+                        <div class="absolute bottom-3 right-4 px-3 py-1 rounded-lg bg-brand-dark/85 backdrop-blur-md text-brand-gold font-bold font-eng">
+                            ฿ 135
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-brand-gold transition-colors">Dirty Loft</h3>
+                            </div>
+                            <p class="text-sm text-gray-400 font-light mb-4">
+                                เอสเปรสโซช็อตเข้มข้นสกัดลงบนนมเย็นจัดสูตรลับเฉพาะ นุ่ม ละมุน รสสัมผัส 2 ชั้นที่ลงตัว
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-brand-border/60 text-xs text-gray-400">
+                            <span><i class="fa-solid fa-mug-hot mr-1 text-brand-amber"></i> House Blend</span>
+                            <span>นมเย็นหวานน้อย</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2: Drip Single Origin -->
+                <div class="menu-card rounded-2xl bg-brand-card border border-brand-border overflow-hidden group hover:border-brand-amber/60 transition-all duration-300 flex flex-col" data-category="coffee">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=80" 
+                             alt="Drip Coffee Single Origin" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-zinc-800 text-brand-gold border border-brand-gold/40">
+                            Specialty
+                        </span>
+                        <div class="absolute bottom-3 right-4 px-3 py-1 rounded-lg bg-brand-dark/85 backdrop-blur-md text-brand-gold font-bold font-eng">
+                            ฿ 160
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-brand-gold transition-colors">Drip Single Origin (Ethiopia)</h3>
+                            </div>
+                            <p class="text-sm text-gray-400 font-light mb-4">
+                                กาแฟดริปสกัดด้วยมือ โน้ตดอกไม้สีขาว ผลไม้ตระกูลเบอร์รี่ และปลายสัมผัสแบบชาเอิร์ลเกรย์
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-brand-border/60 text-xs text-gray-400">
+                            <span><i class="fa-solid fa-droplet mr-1 text-brand-amber"></i> Hand Drip</span>
+                            <span>Tasting Notes: Floral & Berry</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3: Nitro Cold Brew -->
+                <div class="menu-card rounded-2xl bg-brand-card border border-brand-border overflow-hidden group hover:border-brand-amber/60 transition-all duration-300 flex flex-col" data-category="coffee">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80" 
+                             alt="Nitro Cold Brew" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-brand-amber text-black">
+                            Must Try
+                        </span>
+                        <div class="absolute bottom-3 right-4 px-3 py-1 rounded-lg bg-brand-dark/85 backdrop-blur-md text-brand-gold font-bold font-eng">
+                            ฿ 145
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-brand-gold transition-colors">Nitro Cold Brew</h3>
+                            </div>
+                            <p class="text-sm text-gray-400 font-light mb-4">
+                                กาแฟสกัดเย็น 18 ชม. อัดไนโตรเจนบริสุทธิ์ ให้ฟองครีมนุ่มละมุนคล้ายเบียร์สด ดื่มแล้วสดชื่นเต็มพลัง
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-brand-border/60 text-xs text-gray-400">
+                            <span><i class="fa-solid fa-wind mr-1 text-brand-amber"></i> Cold Brewed 18h</span>
+                            <span>Silky & Refreshing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4: Classic French Butter Croissant -->
+                <div class="menu-card rounded-2xl bg-brand-card border border-brand-border overflow-hidden group hover:border-brand-amber/60 transition-all duration-300 flex flex-col" data-category="croissant">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80" 
+                             alt="French Butter Croissant" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-brand-amber text-black">
+                            Best Seller
+                        </span>
+                        <div class="absolute bottom-3 right-4 px-3 py-1 rounded-lg bg-brand-dark/85 backdrop-blur-md text-brand-gold font-bold font-eng">
+                            ฿ 95
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-brand-gold transition-colors">French Butter Croissant</h3>
+                            </div>
+                            <p class="text-sm text-gray-400 font-light mb-4">
+                                ครัวซองต์เนยสดแท้ฝรั่งเศสเกรดพรีเมียม กรอบนอก ชุ่มฉ่ำเนยด้านใน ชั้นแป้งสวยงาม อบสดทุกวัน
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-brand-border/60 text-xs text-gray-400">
+                            <span><i class="fa-solid fa-wheat-awn mr-1 text-brand-amber"></i> 100% French Butter</span>
+                            <span>Freshly Baked</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5: Almond Cream Croissant -->
+                <div class="menu-card rounded-2xl bg-brand-card border border-brand-border overflow-hidden group hover:border-brand-amber/60 transition-all duration-300 flex flex-col" data-category="croissant">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80" 
+                             alt="Almond Croissant" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute bottom-3 right-4 px-3 py-1 rounded-lg bg-brand-dark/85 backdrop-blur-md text-brand-gold font-bold font-eng">
+                            ฿ 130
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-brand-gold transition-colors">Almond Cream Croissant</h3>
+                            </div>
+                            <p class="text-sm text-gray-400 font-light mb-4">
+                                สอดไส้ครีมอัลมอนด์สูตรโฮมเมดเข้มข้น โรยหน้าด้วยอัลมอนด์สไลซ์อบกรอบและไอซิ่งบางเบา
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-brand-border/60 text-xs text-gray-400">
+                            <span><i class="fa-solid fa-cookie mr-1 text-brand-amber"></i> Homemade Cream</span>
+                            <span>Toasted Almonds</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6: Dark Chocolate Cruffin -->
+                <div class="menu-card rounded-2xl bg-brand-card border border-brand-border overflow-hidden group hover:border-brand-amber/60 transition-all duration-300 flex flex-col" data-category="croissant">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?auto=format&fit=crop&w=800&q=80" 
+                             alt="Dark Chocolate Cruffin" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-brand-amber text-black">
+                            Signature
+                        </span>
+                        <div class="absolute bottom-3 right-4 px-3 py-1 rounded-lg bg-brand-dark/85 backdrop-blur-md text-brand-gold font-bold font-eng">
+                            ฿ 120
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-brand-gold transition-colors">Dark Chocolate Tart / Cruffin</h3>
+                            </div>
+                            <p class="text-sm text-gray-400 font-light mb-4">
+                                ช็อกโกแลตพรีเมียม 70% รสชาติเข้มข้น นุ่มลึก ไม่หวานจัด เข้ากันได้ดีอย่างยิ่งกับกาแฟดริป
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-brand-border/60 text-xs text-gray-400">
+                            <span><i class="fa-solid fa-chocolate-bar mr-1 text-brand-amber"></i> 70% Dark Cocoa</span>
+                            <span>Rich & Velvety</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 7: Ceremonial Matcha Latte -->
+                <div class="menu-card rounded-2xl bg-brand-card border border-brand-border overflow-hidden group hover:border-brand-amber/60 transition-all duration-300 flex flex-col" data-category="non-coffee">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=800&q=80" 
+                             alt="Ceremonial Matcha Latte" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute bottom-3 right-4 px-3 py-1 rounded-lg bg-brand-dark/85 backdrop-blur-md text-brand-gold font-bold font-eng">
+                            ฿ 140
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-brand-gold transition-colors">Ceremonial Matcha Latte</h3>
+                            </div>
+                            <p class="text-sm text-gray-400 font-light mb-4">
+                                มัทฉะเกรดพิธีการนำเข้าจากเมืองอุจิ เกียวโต ตีสดถ้วยต่อถ้วย เข้มข้น หอมกลิ่นสาหร่ายและถั่ว
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-brand-border/60 text-xs text-gray-400">
+                            <span><i class="fa-solid fa-leaf mr-1 text-emerald-400"></i> Uji, Kyoto</span>
+                            <span>Pure Matcha 100%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 8: Sparkling Peach Cold Brew Tea -->
+                <div class="menu-card rounded-2xl bg-brand-card border border-brand-border overflow-hidden group hover:border-brand-amber/60 transition-all duration-300 flex flex-col" data-category="non-coffee">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1556881286-fc6915169721?auto=format&fit=crop&w=800&q=80" 
+                             alt="Peach Sparkling Cold Brew" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute bottom-3 right-4 px-3 py-1 rounded-lg bg-brand-dark/85 backdrop-blur-md text-brand-gold font-bold font-eng">
+                            ฿ 125
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-brand-gold transition-colors">Sparkling Peach Tea</h3>
+                            </div>
+                            <p class="text-sm text-gray-400 font-light mb-4">
+                                ชาสกัดเย็นผสมเนื้อพีชแท้และโซดาซ่าสดชื่น ดื่มคลายร้อน ดับกระหายได้อย่างสมบูรณ์แบบ
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-brand-border/60 text-xs text-gray-400">
+                            <span><i class="fa-solid fa-lemon mr-1 text-amber-400"></i> Real Peach</span>
+                            <span>Fizzy & Refreshing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 9: Yuzu Espresso Tonic -->
+                <div class="menu-card rounded-2xl bg-brand-card border border-brand-border overflow-hidden group hover:border-brand-amber/60 transition-all duration-300 flex flex-col" data-category="coffee">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=800&q=80" 
+                             alt="Yuzu Espresso Tonic" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-brand-amber text-black">
+                            Summer Hit
+                        </span>
+                        <div class="absolute bottom-3 right-4 px-3 py-1 rounded-lg bg-brand-dark/85 backdrop-blur-md text-brand-gold font-bold font-eng">
+                            ฿ 150
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-brand-gold transition-colors">Yuzu Espresso Tonic</h3>
+                            </div>
+                            <p class="text-sm text-gray-400 font-light mb-4">
+                                ความเปรี้ยวสดชื่นของส้มยูซุแท้ ตัดกับเอสเปรสโซเข้มข้นและโทนิคซ่า มิติใหม่ของการดื่มกาแฟ
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-brand-border/60 text-xs text-gray-400">
+                            <span><i class="fa-solid fa-sparkles mr-1 text-brand-amber"></i> Japanese Yuzu</span>
+                            <span>Tonic Water Blend</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= GALLERY & VIBES SECTION ================= -->
+    <section id="vibes" class="py-24 relative z-10 border-t border-brand-border/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-brand-amber text-sm font-semibold tracking-wider font-eng uppercase mb-2 inline-block">
+                        SPACE & AMBIANCE
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white">
+                        บรรยากาศและมุมถ่ายรูปสุดชิค
+                    </h2>
+                    <p class="text-gray-400 text-sm sm:text-base font-light mt-2">
+                        ความลงตัวของโครงสร้างปูนเปลือย งานเหล็กสีดำ แสงธรรมชาติ และเสียงเพลง Lo-fi สบายๆ
+                    </p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <span class="text-xs text-brand-gold border border-brand-gold/30 px-3 py-1.5 rounded-full">
+                        <i class="fa-brands fa-instagram mr-1"></i> #ApinyaCafeLoft
+                    </span>
+                </div>
+            </div>
+
+            <!-- Gallery Grid with Modern Layout -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="relative rounded-xl overflow-hidden group h-64 md:h-80 border border-brand-border">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80" 
+                         alt="Cafe Interior" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-brand-dark/40 group-hover:bg-brand-dark/10 transition-colors"></div>
+                    <div class="absolute bottom-3 left-3 text-xs font-medium text-white px-2.5 py-1 rounded bg-black/60 backdrop-blur-sm">
+                        Espresso Bar
+                    </div>
+                </div>
+
+                <div class="relative rounded-xl overflow-hidden group h-64 md:h-80 border border-brand-border">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" 
+                         alt="Latte Art" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-brand-dark/40 group-hover:bg-brand-dark/10 transition-colors"></div>
+                    <div class="absolute bottom-3 left-3 text-xs font-medium text-white px-2.5 py-1 rounded bg-black/60 backdrop-blur-sm">
+                        Latte Art Craft
+                    </div>
+                </div>
+
+                <div class="relative rounded-xl overflow-hidden group h-64 md:h-80 border border-brand-border">
+                    <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=800&q=80" 
+                         alt="Loft Seating Area" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-brand-dark/40 group-hover:bg-brand-dark/10 transition-colors"></div>
+                    <div class="absolute bottom-3 left-3 text-xs font-medium text-white px-2.5 py-1 rounded bg-black/60 backdrop-blur-sm">
+                        Work & Read Corner
+                    </div>
+                </div>
+
+                <div class="relative rounded-xl overflow-hidden group h-64 md:h-80 border border-brand-border">
+                    <img src="https://images.unsplash.com/photo-1509785307050-d4066910ec1e?auto=format&fit=crop&w=800&q=80" 
+                         alt="Bakery Display" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-brand-dark/40 group-hover:bg-brand-dark/10 transition-colors"></div>
+                    <div class="absolute bottom-3 left-3 text-xs font-medium text-white px-2.5 py-1 rounded bg-black/60 backdrop-blur-sm">
+                        Artisan Bakery Bar
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= RESERVATION SECTION ================= -->
+    <section id="reservation" class="py-24 bg-brand-card/20 relative z-10 border-t border-brand-border/40">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-brand-amber text-sm font-semibold tracking-wider font-eng uppercase mb-2 inline-block">
+                    TABLE RESERVATION
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-3">
+                    ระบบจองโต๊ะล่วงหน้า
+                </h2>
+                <p class="text-gray-400 text-sm sm:text-base font-light">
+                    จองโต๊ะโปรดของคุณเพื่อความสะดวกสบาย ไม่ต้องรอคิวในวันและเวลาที่คุณต้องการ
+                </p>
+            </div>
+
+            <!-- Booking Card -->
+            <div class="bg-brand-card rounded-2xl border border-brand-border p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+                <!-- Background Glow -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-brand-amber/5 rounded-full blur-3xl pointer-events-none"></div>
+
+                <form id="reservationForm" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Full Name -->
+                        <div>
+                            <label for="resName" class="block text-sm font-medium text-gray-300 mb-2">
+                                <i class="fa-solid fa-user text-brand-amber mr-1"></i> ชื่อ-นามสกุล <span class="text-red-400">*</span>
+                            </label>
+                            <input type="text" id="resName" required placeholder="เช่น คุณอภิญญา หรือ สมชาย"
+                                   class="w-full px-4 py-3 rounded-xl bg-brand-dark/90 border border-brand-border text-white placeholder-gray-500 focus:outline-none focus:border-brand-amber transition-colors">
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div>
+                            <label for="resPhone" class="block text-sm font-medium text-gray-300 mb-2">
+                                <i class="fa-solid fa-phone text-brand-amber mr-1"></i> เบอร์โทรศัพท์ <span class="text-red-400">*</span>
+                            </label>
+                            <input type="tel" id="resPhone" required placeholder="08X-XXX-XXXX"
+                                   class="w-full px-4 py-3 rounded-xl bg-brand-dark/90 border border-brand-border text-white placeholder-gray-500 focus:outline-none focus:border-brand-amber transition-colors">
+                        </div>
+
+                        <!-- Date -->
+                        <div>
+                            <label for="resDate" class="block text-sm font-medium text-gray-300 mb-2">
+                                <i class="fa-regular fa-calendar text-brand-amber mr-1"></i> วันที่ต้องการจอง <span class="text-red-400">*</span>
+                            </label>
+                            <input type="date" id="resDate" required
+                                   class="w-full px-4 py-3 rounded-xl bg-brand-dark/90 border border-brand-border text-white focus:outline-none focus:border-brand-amber transition-colors">
+                        </div>
+
+                        <!-- Time Slot -->
+                        <div>
+                            <label for="resTime" class="block text-sm font-medium text-gray-300 mb-2">
+                                <i class="fa-regular fa-clock text-brand-amber mr-1"></i> เวลา <span class="text-red-400">*</span>
+                            </label>
+                            <select id="resTime" required class="w-full px-4 py-3 rounded-xl bg-brand-dark/90 border border-brand-border text-white focus:outline-none focus:border-brand-amber transition-colors">
+                                <option value="" disabled selected>เลือกช่วงเวลา</option>
+                                <option value="08:30 น.">08:30 น.</option>
+                                <option value="10:00 น.">10:00 น.</option>
+                                <option value="11:30 น.">11:30 น.</option>
+                                <option value="13:00 น.">13:00 น.</option>
+                                <option value="14:30 น.">14:30 น.</option>
+                                <option value="16:00 น.">16:00 น.</option>
+                                <option value="17:00 น.">17:00 น.</option>
+                            </select>
+                        </div>
+
+                        <!-- Number of Guests -->
+                        <div>
+                            <label for="resGuests" class="block text-sm font-medium text-gray-300 mb-2">
+                                <i class="fa-solid fa-users text-brand-amber mr-1"></i> จำนวนผู้มาเยือน <span class="text-red-400">*</span>
+                            </label>
+                            <select id="resGuests" required class="w-full px-4 py-3 rounded-xl bg-brand-dark/90 border border-brand-border text-white focus:outline-none focus:border-brand-amber transition-colors">
+                                <option value="1 ท่าน">1 ท่าน</option>
+                                <option value="2 ท่าน" selected>2 ท่าน</option>
+                                <option value="3 - 4 ท่าน">3 - 4 ท่าน</option>
+                                <option value="5 - 6 ท่าน">5 - 6 ท่าน</option>
+                                <option value="มากกว่า 6 ท่าน (กลุ่มใหญ่)">มากกว่า 6 ท่าน (กลุ่มใหญ่)</option>
+                            </select>
+                        </div>
+
+                        <!-- Seating Zone -->
+                        <div>
+                            <label for="resZone" class="block text-sm font-medium text-gray-300 mb-2">
+                                <i class="fa-solid fa-chair text-brand-amber mr-1"></i> โซนที่ต้องการนั่ง
+                            </label>
+                            <select id="resZone" class="w-full px-4 py-3 rounded-xl bg-brand-dark/90 border border-brand-border text-white focus:outline-none focus:border-brand-amber transition-colors">
+                                <option value="โซนเคาน์เตอร์บาร์ (Slow Bar)">โซนเคาน์เตอร์บาร์ (Slow Bar ดูบาริสต้าดริป)</option>
+                                <option value="โซนโต๊ะทำงาน Co-working (มีปลั๊กไฟ)" selected>โซนโต๊ะทำงาน Co-working (มีปลั๊กไฟ)</option>
+                                <option value="โซนโซฟา ลอฟท์เลานจ์ (เน้นถ่ายรูป)">โซนโซฟา ลอฟท์เลานจ์ (เน้นถ่ายรูป)</option>
+                                <option value="โซนระเบียงเอาท์ดอร์ (Pet-Friendly)">โซนระเบียงเอาท์ดอร์ (Pet-Friendly)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Notes -->
+                    <div>
+                        <label for="resNote" class="block text-sm font-medium text-gray-300 mb-2">
+                            <i class="fa-solid fa-message text-brand-amber mr-1"></i> ความต้องการพิเศษเพิ่มเติม (ถ้ามี)
+                        </label>
+                        <textarea id="resNote" rows="3" placeholder="เช่น ขอโต๊ะริมหน้าต่าง, ต้องการเก้าอี้เด็ก หรือแจ้งวันเกิด..."
+                                  class="w-full px-4 py-3 rounded-xl bg-brand-dark/90 border border-brand-border text-white placeholder-gray-500 focus:outline-none focus:border-brand-amber transition-colors"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="pt-2">
+                        <button type="submit" class="w-full py-4 rounded-xl text-base font-semibold bg-gradient-to-r from-brand-amber to-brand-gold text-black shadow-lg shadow-brand-amber/20 hover:opacity-90 hover:scale-[1.01] transition-all duration-300">
+                            <i class="fa-regular fa-paper-plane mr-2"></i> ยืนยันการส่งข้อมูลจองโต๊ะ
+                        </button>
+                    </div>
+
+                    <p class="text-xs text-center text-gray-500">
+                        * ทางร้านจะเก็บโต๊ะไว้ให้ 15 นาทีหลังจากเวลาที่ระบุ หากต้องการเลื่อนเวลาสามารถโทรแจ้งทางร้านได้ทันที
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Modal Popup -->
+    <div id="reservationModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-brand-card border border-brand-gold/50 rounded-2xl p-6 sm:p-8 max-w-md w-full shadow-2xl transform scale-95 transition-transform duration-300">
+            <div class="w-16 h-16 rounded-full bg-brand-amber/20 border border-brand-amber text-brand-amber flex items-center justify-center text-3xl mx-auto mb-4">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-center text-white mb-2">จองโต๊ะสำเร็จแล้ว!</h3>
+            <p class="text-sm text-center text-gray-300 mb-6">
+                ขอบคุณที่เลือกมาใช้บริการที่ <strong class="text-brand-gold">อภิญญาคาเฟ่</strong> ทางเราได้บันทึกข้อมูลการจองเรียบร้อยแล้ว
+            </p>
+            
+            <div class="bg-brand-dark p-4 rounded-xl border border-brand-border text-xs space-y-2 mb-6" id="modalBookingDetails">
+                <!-- Injected via JS -->
+            </div>
+
+            <button id="closeModalBtn" class="w-full py-3 rounded-xl font-medium bg-brand-amber text-black hover:opacity-90 transition-opacity">
+                เข้าใจแล้ว / ปิดหน้าต่าง
+            </button>
+        </div>
+    </div>
+
+    <!-- ================= LOCATION & HOURS SECTION ================= -->
+    <section id="location" class="py-24 relative z-10 border-t border-brand-border/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Info Column -->
+                <div class="lg:col-span-6 space-y-8">
+                    <div>
+                        <span class="text-brand-amber text-sm font-semibold tracking-wider font-eng uppercase mb-2 inline-block">
+                            VISIT OUR STORE
+                        </span>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+                            พิกัดร้าน & เวลาเปิดให้บริการ
+                        </h2>
+                        <p class="text-gray-300 font-light">
+                            ร้านตั้งอยู่ในทำเลที่สะดวก พร้อมที่จอดรถกว้างขวาง บรรยากาศเงียบสงบเหมาะแก่การพักผ่อน
+                        </p>
+                    </div>
+
+                    <!-- Real-time Status Badge -->
+                    <div class="p-4 rounded-xl bg-brand-card border border-brand-border flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <span class="relative flex h-3.5 w-3.5">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500"></span>
+                            </span>
+                            <div>
+                                <div class="text-sm font-semibold text-white" id="liveStatusText">เปิดให้บริการตามปกติวันนี้</div>
+                                <div class="text-xs text-gray-400">08:00 น. - 18:00 น. (เปิดทุกวัน ไม่มีวันหยุด)</div>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-950/80 text-emerald-400 border border-emerald-500/30 font-eng">
+                            OPEN NOW
+                        </span>
+                    </div>
+
+                    <!-- Details List -->
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-brand-card border border-brand-border flex items-center justify-center text-brand-amber shrink-0 mt-1">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium text-sm">ที่อยู่ร้าน</h4>
+                                <p class="text-sm text-gray-400 leading-relaxed mt-0.5">
+                                    อภิญญาคาเฟ่ (Apinya Café) 128/9 ถนนสุขุมวิท ซอย 55 (ทองหล่อ) แขวงคลองตันเหนือ เขตวัฒนา กรุงเทพมหานคร 10110
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-brand-card border border-brand-border flex items-center justify-center text-brand-amber shrink-0 mt-1">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium text-sm">เบอร์โทรศัพท์ติดต่อ</h4>
+                                <a href="tel:0891234567" class="text-sm text-brand-gold hover:underline mt-0.5 inline-block">
+                                    089-123-4567 / 02-345-6789
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-brand-card border border-brand-border flex items-center justify-center text-brand-amber shrink-0 mt-1">
+                                <i class="fa-solid fa-square-parking"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium text-sm">ที่จอดรถ & สิ่งอำนวยความสะดวก</h4>
+                                <p class="text-sm text-gray-400 mt-0.5">
+                                    ลานจอดรถฟรีหน้าร้านรองรับได้ 25 คัน, ฟรี High-Speed Wi-Fi 1Gbps, ปลั๊กไฟทุกโต๊ะ, ห้องน้ำสะอาดแยกชาย-หญิง
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct Navigation Button -->
+                    <div class="pt-2">
+                        <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" 
+                           class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-card border border-brand-amber text-brand-gold hover:bg-brand-amber hover:text-black transition-all duration-300 font-medium text-sm">
+                            <i class="fa-solid fa-diamond-turn-right"></i> เปิดแผนที่นำทาง (Google Maps)
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Map Frame Column -->
+                <div class="lg:col-span-6">
+                    <div class="rounded-2xl overflow-hidden border border-brand-border bg-brand-card shadow-2xl h-[420px] relative">
+                        <!-- Embedded Google Map Simulation with Dark Filter -->
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.765691456209!2d100.5794576!3d13.7326084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDQzJzU3LjQiTiAxMDDCsDM0JzQ2LjAiRQ!5e0!3m2!1sen!2sth!4v1620000000000!5m2!1sen!2sth" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0; filter: invert(90%) hue-rotate(180deg) contrast(1.1) brightness(0.9);" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+
+                        <div class="absolute bottom-4 left-4 right-4 p-3 rounded-xl glass-dark border border-brand-border text-xs flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-location-dot text-brand-amber text-base"></i>
+                                <span class="text-white font-medium">Apinya Café • Thonglor</span>
+                            </div>
+                            <span class="text-gray-400">ห่างจาก BTS ทองหล่อ 5 นาที</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SOCIAL & DELIVERY SECTION ================= -->
+    <section class="py-16 bg-brand-card/40 relative z-10 border-t border-brand-border/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-2xl sm:text-3xl font-bold text-white mb-3">
+                สั่งเดลิเวอรี่ & ติดตามข่าวสาร
+            </h3>
+            <p class="text-gray-400 text-sm max-w-xl mx-auto mb-10">
+                เพลิดเพลินกับกาแฟและครัวซองต์อบร้อนได้ถึงหน้าบ้าน หรือแอดไลน์เพื่อรับโปรโมชันพิเศษทุกสัปดาห์
+            </p>
+
+            <!-- Delivery Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-4 mb-10">
+                <!-- GrabFood -->
+                <a href="https://food.grab.com" target="_blank" rel="noopener noreferrer" 
+                   class="flex items-center gap-3 px-6 py-3.5 rounded-xl bg-[#00B14F]/15 border border-[#00B14F]/40 text-[#00B14F] hover:bg-[#00B14F] hover:text-white transition-all duration-300 font-medium">
+                    <i class="fa-solid fa-motorcycle text-xl"></i>
+                    <div class="text-left leading-tight">
+                        <span class="block text-xs uppercase font-eng opacity-80">Order via</span>
+                        <span class="text-sm font-bold font-eng">GrabFood</span>
+                    </div>
+                </a>
+
+                <!-- LINE MAN -->
+                <a href="https://lineman.line.me" target="_blank" rel="noopener noreferrer" 
+                   class="flex items-center gap-3 px-6 py-3.5 rounded-xl bg-[#06C755]/15 border border-[#06C755]/40 text-[#06C755] hover:bg-[#06C755] hover:text-white transition-all duration-300 font-medium">
+                    <i class="fa-solid fa-box-archive text-xl"></i>
+                    <div class="text-left leading-tight">
+                        <span class="block text-xs uppercase font-eng opacity-80">Order via</span>
+                        <span class="text-sm font-bold font-eng">LINE MAN</span>
+                    </div>
+                </a>
+
+                <!-- LINE OA -->
+                <a href="https://line.me" target="_blank" rel="noopener noreferrer" 
+                   class="flex items-center gap-3 px-6 py-3.5 rounded-xl bg-brand-card border border-brand-gold/50 text-brand-gold hover:bg-brand-gold hover:text-black transition-all duration-300 font-medium">
+                    <i class="fa-brands fa-line text-2xl"></i>
+                    <div class="text-left leading-tight">
+                        <span class="block text-xs font-light">LINE Official</span>
+                        <span class="text-sm font-bold font-eng">@apinyacafe</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex items-center justify-center gap-4">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" 
+                   class="w-12 h-12 rounded-full bg-brand-card border border-brand-border text-gray-300 hover:text-white hover:border-brand-amber hover:bg-brand-dark flex items-center justify-center transition-all duration-300 text-lg" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
+                   class="w-12 h-12 rounded-full bg-brand-card border border-brand-border text-gray-300 hover:text-white hover:border-brand-amber hover:bg-brand-dark flex items-center justify-center transition-all duration-300 text-lg" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" 
+                   class="w-12 h-12 rounded-full bg-brand-card border border-brand-border text-gray-300 hover:text-white hover:border-brand-amber hover:bg-brand-dark flex items-center justify-center transition-all duration-300 text-lg" aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-brand-dark border-t border-brand-border py-12 relative z-10 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Brand Info -->
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-brand-amber flex items-center justify-center text-black font-bold">
+                        <i class="fa-solid fa-mug-hot"></i>
+                    </div>
+                    <div>
+                        <div class="font-eng font-bold text-white text-base">APINYA CAFÉ</div>
+                        <div class="text-xs text-gray-500 font-light">อภิญญาคาเฟ่ • MODERN LOFT ROASTERY</div>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="text-gray-500 text-xs text-center md:text-right font-light">
+                    © 2026 อภิญญาคาเฟ่ (Apinya Café). สงวนลิขสิทธิ์ทุกประการ. <br class="hidden sm:block">
+                    Crafted with Passion for Coffee & Community.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" class="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full bg-brand-amber text-black shadow-lg shadow-brand-amber/30 flex items-center justify-center text-lg hover:scale-110 opacity-0 pointer-events-none transition-all duration-300" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+        // 1. Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 2. Navbar Glass Effect on Scroll
+        const navbar = document.getElementById('navbar');
+        const backToTopBtn = document.getElementById('backToTopBtn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('glass-dark', 'shadow-xl');
+            } else {
+                navbar.classList.remove('glass-dark', 'shadow-xl');
+            }
+
+            // Back to top visibility
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                backToTopBtn.classList.add('opacity-100', 'pointer-events-auto');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // 3. Menu Filtering
+        const menuTabBtns = document.querySelectorAll('.menu-tab-btn');
+        const menuCards = document.querySelectorAll('.menu-card');
+
+        menuTabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active classes
+                menuTabBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-brand-amber', 'text-black');
+                    b.classList.add('bg-brand-card', 'text-gray-300');
+                });
+
+                // Add active to clicked
+                btn.classList.add('active', 'bg-brand-amber', 'text-black');
+                btn.classList.remove('bg-brand-card', 'text-gray-300');
+
+                const category = btn.getAttribute('data-category');
+
+                menuCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // 4. Set Default Date in Reservation to Today
+        const resDateInput = document.getElementById('resDate');
+        if (resDateInput) {
+            const today = new Date().toISOString().split('T')[0];
+            resDateInput.min = today;
+            resDateInput.value = today;
+        }
+
+        // 5. Reservation Form Handling
+        const reservationForm = document.getElementById('reservationForm');
+        const reservationModal = document.getElementById('reservationModal');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const modalBookingDetails = document.getElementById('modalBookingDetails');
+
+        reservationForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('resName').value;
+            const phone = document.getElementById('resPhone').value;
+            const date = document.getElementById('resDate').value;
+            const time = document.getElementById('resTime').value;
+            const guests = document.getElementById('resGuests').value;
+            const zone = document.getElementById('resZone').value;
+            const note = document.getElementById('resNote').value || '-';
+
+            // Generate random booking code
+            const bookingCode = 'APN-' + Math.floor(1000 + Math.random() * 9000);
+
+            // Populate Modal
+            modalBookingDetails.innerHTML = `
+                <div class="flex justify-between py-1 border-b border-brand-border/40">
+                    <span class="text-gray-400">รหัสการจอง:</span>
+                    <span class="text-brand-amber font-bold font-eng">${bookingCode}</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-brand-border/40">
+                    <span class="text-gray-400">ชื่อผู้จอง:</span>
+                    <span class="text-white">${name}</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-brand-border/40">
+                    <span class="text-gray-400">เบอร์โทร:</span>
+                    <span class="text-white font-eng">${phone}</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-brand-border/40">
+                    <span class="text-gray-400">วัน & เวลา:</span>
+                    <span class="text-white">${date} เวลา ${time}</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-brand-border/40">
+                    <span class="text-gray-400">จำนวนที่นั่ง:</span>
+                    <span class="text-white">${guests}</span>
+                </div>
+                <div class="flex justify-between py-1">
+                    <span class="text-gray-400">โซนที่นั่ง:</span>
+                    <span class="text-brand-gold">${zone}</span>
+                </div>
+            `;
+
+            // Show Modal
+            reservationModal.classList.remove('hidden');
+            setTimeout(() => {
+                reservationModal.classList.remove('opacity-0');
+                reservationModal.querySelector('.scale-95')?.classList.remove('scale-95');
+            }, 10);
+
+            // Reset form
+            reservationForm.reset();
+            if (resDateInput) resDateInput.value = new Date().toISOString().split('T')[0];
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            reservationModal.classList.add('opacity-0');
+            setTimeout(() => {
+                reservationModal.classList.add('hidden');
+            }, 300);
+        });
+
+        // Close on clicking outside modal content
+        reservationModal.addEventListener('click', (e) => {
+            if (e.target === reservationModal) {
+                closeModalBtn.click();
+            }
+        });
+    </script>
+</body>
+</html>
